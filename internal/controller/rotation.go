@@ -28,7 +28,7 @@ func (a *cRotation) Create(ctx context.Context, req *backend.RotationReq) (res *
 }
 func (a *cRotation) Delete(ctx context.Context, req *backend.RotationDeleteReq) (res *backend.RotationDeleteRes, err error) {
 	err = service.Rotation().Delete(ctx, req.Id)
-	return
+	return &backend.RotationDeleteRes{Id: req.Id}, nil
 }
 
 func (a *cRotation) Update(ctx context.Context, req *backend.RotationUpdateReq) (res *backend.RotationUpdateRes, err error) {
@@ -40,5 +40,21 @@ func (a *cRotation) Update(ctx context.Context, req *backend.RotationUpdateReq) 
 			Sort:   req.Sort,
 		},
 	})
-	return
+	return &backend.RotationUpdateRes{Id: req.Id}, nil
+}
+
+func (a *cRotation) List(ctx context.Context, req *backend.RotationGetListCommonReq) (res *backend.RotationGetListCommonRes, err error) {
+	getListRes, err := service.Rotation().GetList(ctx, model.RotationGetListInput{
+		Page: req.Page,
+		Size: req.Size,
+		Sort: req.Sort,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return &backend.RotationGetListCommonRes{List: getListRes.List,
+		Page:  getListRes.Page,
+		Size:  getListRes.Size,
+		Total: getListRes.Total,
+	}, nil
 }

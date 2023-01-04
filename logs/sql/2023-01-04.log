@@ -1,0 +1,10 @@
+2023-01-04 21:03:07.161 [DEBU] {9b195494bd1c371713ca5b652ab3066d} [  5 ms] [default] [shop] [rows:9  ] SHOW FULL COLUMNS FROM `position_info`
+2023-01-04 21:03:07.162 [DEBU] {9b195494bd1c371713ca5b652ab3066d} [  0 ms] [default] [shop] [rows:0  ] SELECT `id`,`pic_url`,`goods_name`,`link`,`sort`,`goods_id`,`created_at`,`updated_at`,`deleted_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10
+2023-01-04 21:06:48.434 [DEBU] {ad107319f11c371714ca5b657eb32f9e} [  3 ms] [default] [shop] [rows:0  ] SELECT `id`,`pic_url`,`goods_name`,`link`,`sort`,`goods_id`,`created_at`,`updated_at`,`deleted_at` FROM `position_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10
+2023-01-04 21:09:00.857 [DEBU] {11018bee0f1d371715ca5b6524690d04} [  2 ms] [default] [shop] [rows:0  ] [txid:1] BEGIN
+2023-01-04 21:09:00.859 [DEBU] {11018bee0f1d371715ca5b6524690d04} [  1 ms] [default] [shop] [rows:0  ] [txid:1] UPDATE `position_info` SET `deleted_at`='2023-01-04 21:09:00' WHERE (`id`=0) AND `deleted_at` IS NULL
+2023-01-04 21:09:00.859 [DEBU] {11018bee0f1d371715ca5b6524690d04} [  0 ms] [default] [shop] [rows:0  ] [txid:1] COMMIT
+2023-01-04 21:09:32.966 [DEBU] {e2806a68171d371717ca5b652d76b9e6} [  1 ms] [default] [shop] [rows:0  ] [txid:2] BEGIN
+2023-01-04 21:09:32.967 [DEBU] {e2806a68171d371717ca5b652d76b9e6} [  1 ms] [default] [shop] [rows:0  ] [txid:2] UPDATE `position_info` SET `deleted_at`='2023-01-04 21:09:32' WHERE (`id`=1) AND `deleted_at` IS NULL
+2023-01-04 21:09:32.968 [DEBU] {e2806a68171d371717ca5b652d76b9e6} [  1 ms] [default] [shop] [rows:0  ] [txid:2] COMMIT
+2023-01-04 21:09:57.814 [DEBU] {aeb84f311d1d371718ca5b65253e4d04} [  3 ms] [default] [shop] [rows:1  ] INSERT INTO `position_info`(`created_at`,`pic_url`,`updated_at`,`link`,`sort`,`goods_name`,`goods_id`) VALUES('2023-01-04 21:09:57','http://ok.com','2023-01-04 21:09:57','http://linke.com',0,'emm',1) 

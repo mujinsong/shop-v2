@@ -1,0 +1,6 @@
+2022-12-28 18:25:21.539 [DEBU] {30bb10b811ee3417235e736f682cc2ed} [  6 ms] [default] [shop] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2022-12-28 18:25:21.551 [DEBU] {30bb10b811ee3417235e736f682cc2ed} [ 12 ms] [default] [shop] [rows:1  ] INSERT INTO `rotation_info`(`sort`,`created_at`,`pic_url`,`updated_at`,`link`) VALUES(5,'2022-12-28 18:25:21','333','2022-12-28 18:25:21','http://ok.com') 
+2022-12-28 18:27:37.016 [DEBU] {c2de864331ee3417255e736f2dcf90d5} [  1 ms] [default] [shop] [rows:0  ] [txid:1] BEGIN
+2022-12-28 18:27:37.019 [DEBU] {c2de864331ee3417255e736f2dcf90d5} [  2 ms] [default] [shop] [rows:1  ] [txid:1] UPDATE `rotation_info` SET `deleted_at`='2022-12-28 18:27:37' WHERE (`id`=2) AND `deleted_at` IS NULL
+2022-12-28 18:27:37.027 [DEBU] {c2de864331ee3417255e736f2dcf90d5} [  8 ms] [default] [shop] [rows:0  ] [txid:1] COMMIT
+2022-12-28 18:29:03.086 [DEBU] {3ae4254d45ee3417265e736f8720194c} [ 10 ms] [default] [shop] [rows:1  ] INSERT INTO `rotation_info`(`created_at`,`sort`,`pic_url`,`link`,`updated_at`) VALUES('2022-12-28 18:29:03',5,'333','http://ok.com','2022-12-28 18:29:03') 

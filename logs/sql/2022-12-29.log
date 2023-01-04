@@ -1,0 +1,4 @@
+2022-12-29 23:15:53.060 [DEBU] {516e43e1804c3517d255ed6b8ee786c8} [  2 ms] [default] [shop] [rows:0  ] [txid:1] BEGIN
+2022-12-29 23:15:53.066 [DEBU] {516e43e1804c3517d255ed6b8ee786c8} [  4 ms] [default] [shop] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `rotation_info`
+2022-12-29 23:15:53.072 [DEBU] {516e43e1804c3517d255ed6b8ee786c8} [  5 ms] [default] [shop] [rows:1  ] [txid:1] UPDATE `rotation_info` SET `updated_at`='2022-12-29 23:15:53',`pic_url`='777',`link`='http://god.com',`sort`=0 WHERE (`id`=9) AND `deleted_at` IS NULL
+2022-12-29 23:15:53.081 [DEBU] {516e43e1804c3517d255ed6b8ee786c8} [  9 ms] [default] [shop] [rows:0  ] [txid:1] COMMIT
