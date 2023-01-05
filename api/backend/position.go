@@ -13,7 +13,7 @@ type PositionReq struct {
 	Sort      int    `json:"sort"     dc:"排序"`
 }
 type PositionRes struct {
-	PositionId int `json:"positionId"`
+	PositionId int `json:"position_id"`
 	//g.Meta `mime:"text/html" example:"string"`
 }
 type PositionDeleteReq struct {

@@ -80,12 +80,12 @@ type RotationSearchOutputItem struct {
 	RotationGetListOutputItem
 }
 
-// RotationListItem 主要用于列表展示
-type RotationListItem struct {
-	Id        uint        `json:"id"` // 自增ID
-	PicUrl    string      `json:"pic_url"`
-	Link      string      `json:"link"`
-	Sort      uint        `json:"sort"`       // 排序，数值越低越靠前，默认为添加时的时间戳，可用于置顶
-	CreatedAt *gtime.Time `json:"created_at"` // 创建时间
-	UpdatedAt *gtime.Time `json:"updated_at"` // 修改时间
-}
+//// RotationListItem 主要用于列表展示
+//type RotationListItem struct {
+//	Id        uint        `json:"id"` // 自增ID
+//	PicUrl    string      `json:"pic_url"`
+//	Link      string      `json:"link"`
+//	Sort      uint        `json:"sort"`       // 排序，数值越低越靠前，默认为添加时的时间戳，可用于置顶
+//	CreatedAt *gtime.Time `json:"created_at"` // 创建时间
+//	UpdatedAt *gtime.Time `json:"updated_at"` // 修改时间
+//}

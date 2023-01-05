@@ -11,7 +11,7 @@ type RotationReq struct {
 	Sort   int    `json:"sort"     dc:"排序"`
 }
 type RotationRes struct {
-	RotationId int `json:"rotationId"`
+	RotationId int `json:"rotation_id"`
 	//g.Meta `mime:"text/html" example:"string"`
 }
 type RotationDeleteReq struct {
