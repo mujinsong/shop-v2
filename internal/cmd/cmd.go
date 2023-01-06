@@ -26,11 +26,22 @@ var (
 				)
 				group.Bind(
 					controller.Hello,
-					controller.Rotation, //轮播图
-					controller.Position, //手工位
-					controller.Admin,    //管理员
-					controller.Login,    //登陆
+					controller.Rotation,     //轮播图
+					controller.Position,     //手工位
+					controller.Admin.Create, //管理员
+					controller.Admin.Update, //管理员
+					controller.Admin.Delete, //管理员
+					controller.Admin.List,   //管理员
+					controller.Login,        //登陆
+
 				)
+				// Special handler that needs authentication.
+				group.Group("/", func(group *ghttp.RouterGroup) {
+					group.Middleware(service.Middleware().Auth)
+					group.ALLMap(g.Map{
+						"/backend/admin/info": controller.Admin.Info,
+					})
+				})
 			})
 			s.Run()
 			return nil
