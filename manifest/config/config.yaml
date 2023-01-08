@@ -18,3 +18,9 @@ database:
     link:   "mysql:root:Zsm@20020609@tcp(127.0.0.1:3306)/shop"
     debug:  true
 
+redis:
+  default:
+    address: 127.0.0.1:6379
+    db: 1
+    pass: zsm20020609
+    idleTimeout: 600

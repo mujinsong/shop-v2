@@ -12,7 +12,7 @@ type AdminReq struct {
 	IsAdmin  int    `json:"is_admin"     dc:"是否超级管理员"`
 }
 type AdminRes struct {
-	AdminId int `json:"adminId"`
+	AdminId int `json:"admin_id"`
 	//g.Meta `mime:"text/html" example:"string"`
 }
 type AdminDeleteReq struct {
@@ -20,7 +20,7 @@ type AdminDeleteReq struct {
 	Id     uint `v:"min:1#请选择需要删除的管理员" dc:"管理员id"`
 }
 type AdminDeleteRes struct {
-	Id uint `json:"id"`
+	//Id uint `json:"id"`
 }
 
 type AdminUpdateReq struct {
@@ -49,7 +49,21 @@ type AdminGetInfoReq struct {
 	g.Meta `path:"/backend/admin/info" method:"get"`
 }
 
+// for jwt
+//type AdminGetInfoRes struct {
+//	Id          int    `json:"id"`
+//	IdentityKey string `json:"identity_key"`
+//	Payload     string `json:"payload"`
+//}
+
+// for gtoken
 type AdminGetInfoRes struct {
+	Id      int    `json:"id"`
+	Name    string `json:"name"`
+	RoleIds string `json:"role_ids"`
+	IsAdmin int    `json:"is_admin"`
+}
+type AdminGetInfoGtokenRes struct {
 	Id          int    `json:"id"`
 	IdentityKey string `json:"identity_key"`
 	Payload     string `json:"payload"`

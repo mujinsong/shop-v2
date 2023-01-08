@@ -43,3 +43,8 @@ func (s *sLogin) Login(ctx context.Context, in model.UserLoginInput) error {
 	})
 	return nil
 }
+
+// 注销
+func (s *sLogin) Logout(ctx context.Context) error {
+	return service.Session().RemoveUser(ctx)
+}

@@ -13,6 +13,7 @@ import (
 type (
 	ILogin interface {
 		Login(ctx context.Context, in model.UserLoginInput) error
+		Logout(ctx context.Context) error
 	}
 )
 
