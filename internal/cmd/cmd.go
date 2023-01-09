@@ -16,6 +16,7 @@ import (
 	"shop-v2/utility"
 	"shop-v2/utility/response"
 	"strconv"
+	"time"
 
 	"shop-v2/internal/controller"
 )
@@ -32,6 +33,7 @@ var (
 			// 启动gtoken
 			gfAdminToken := &gtoken.GfToken{
 				ServerName:       "shop_v2",
+				Timeout:          int(time.Minute.Milliseconds()),
 				CacheMode:        2, //gredis
 				LoginPath:        "/backend/login",
 				LoginBeforeFunc:  loginFunc,
@@ -43,10 +45,10 @@ var (
 				AuthAfterFunc:    authAfterFunc,
 			}
 			//todo 抽取方法
-			err = gfAdminToken.Start()
-			if err != nil {
-				return err
-			}
+			//err = gfAdminToken.Start()
+			//if err != nil {
+			//	return err
+			//}
 			// 认证接口
 			s.Group("/", func(group *ghttp.RouterGroup) {
 				//group.Middleware(ghttp.MiddlewareHandlerResponse)
@@ -111,7 +113,7 @@ func loginFunc(r *ghttp.Request) (string, interface{}) {
 	}
 
 	// 唯一标识，扩展参数user data
-	//g.Dump("admininfo", adminInfo)
+	g.Dump("admininfo", adminInfo)
 	return consts.GtokenAdminPrefix + strconv.Itoa(adminInfo.Id), adminInfo
 }
 
@@ -119,8 +121,9 @@ func loginFunc(r *ghttp.Request) (string, interface{}) {
 //自定义登陆之后的函数
 func loginAfterFunc(r *ghttp.Request, respData gtoken.Resp) {
 	g.Dump("respData:", respData)
+	g.Dump("在这了")
 	if !respData.Success() {
-		g.Dump("在这了")
+		//g.Dump("在这了")
 		respData.Code = 0
 		r.Response.WriteJson(respData)
 		return
@@ -158,11 +161,12 @@ func loginAfterFunc(r *ghttp.Request, respData gtoken.Resp) {
 		data := &backend.LoginRes{
 			Type:        "Bearer",
 			Token:       respData.GetString("token"),
-			ExpireIn:    10 * 24 * 60 * 60, //单位秒,
+			ExpireIn:    5, //10 * 24 * 60 * 60, //单位秒,
 			IsAdmin:     adminInfo.IsAdmin,
 			RoleIds:     adminInfo.RoleIds,
 			Permissions: permissions,
 		}
+		g.Dump("data:", data)
 		response.JsonExit(r, 0, "", data)
 	}
 	return
