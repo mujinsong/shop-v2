@@ -71,6 +71,8 @@ var (
 					controller.Admin.Delete, //管理员
 					controller.Admin.List,   //管理员
 					controller.Login,        //登陆
+					controller.Role,         //角色
+					controller.Data,         //数据大屏相关
 
 				)
 				// Special handler that needs authentication.
