@@ -24,3 +24,12 @@ redis:
     db: 1
     pass: zsm20020609
     idleTimeout: 600
+
+qiniu:
+  bucket: "mujinsong-shop"
+  accesskey: "t3ZOT_J_RbjLW2UZKWYf100yYxdWV55fX_Teolns"
+  secretkey: "pUPniVu3WYXLdpJprQaczH3BN0eXIMAXH4yW60AS"
+  url: "http://cdn.mujinsong.top/"
+
+upload:
+  path: "upload"

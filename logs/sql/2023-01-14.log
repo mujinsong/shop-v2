@@ -1,0 +1,28 @@
+2023-01-14 23:46:23.537 [DEBU] {cd45012774373a172567fe045f5a09a6} [  5 ms] [default] [shop] [rows:9  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-01-14 23:46:23.559 [DEBU] {332e5e2774373a172667fe04d062ed6a} [ 22 ms] [default] [shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`deleted_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE (`name`='song') AND `deleted_at` IS NULL LIMIT 1
+2023-01-14 23:46:23.563 [DEBU] {8f8bd82874373a172767fe047de43df4} [  1 ms] [default] [shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`deleted_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE (`id`='3') AND `deleted_at` IS NULL LIMIT 1
+2023-01-14 23:46:23.567 [DEBU] {6501f52874373a172867fe04c1e0f03c} [  3 ms] [default] [shop] [rows:5  ] SHOW FULL COLUMNS FROM `role_permission_info`
+2023-01-14 23:46:23.570 [DEBU] {2d7f292974373a172967fe04b6f904af} [  3 ms] [default] [shop] [rows:0  ] SELECT `id`,`role_id`,`permission_id`,`created_at`,`updated_at` FROM `role_permission_info` WHERE `role_id` IN ('2')
+2023-01-14 23:46:23.574 [DEBU] {019c592974373a172a67fe04165855a6} [  3 ms] [default] [shop] [rows:6  ] SHOW FULL COLUMNS FROM `permission_info`
+2023-01-14 23:46:23.577 [DEBU] {33eb962974373a172b67fe04bf718c14} [  2 ms] [default] [shop] [rows:0  ] SELECT `id`,`name`,`path`,`created_at`,`updated_at`,`deleted_at` FROM `permission_info` WHERE (0=1) AND `deleted_at` IS NULL
+2023-01-14 23:47:05.708 [DEBU] {eca49bf87d373a17666eb53fe19ff459} [  6 ms] [default] [shop] [rows:9  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-01-14 23:47:05.710 [DEBU] {0889fef87d373a17676eb53f32ea5fb8} [  1 ms] [default] [shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`deleted_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE (`name`='song') AND `deleted_at` IS NULL LIMIT 1
+2023-01-14 23:47:05.716 [DEBU] {582857f97d373a17686eb53fdfed987f} [  1 ms] [default] [shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`deleted_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE (`id`='3') AND `deleted_at` IS NULL LIMIT 1
+2023-01-14 23:47:05.720 [DEBU] {40ab72f97d373a17696eb53fb16dcec3} [  2 ms] [default] [shop] [rows:5  ] SHOW FULL COLUMNS FROM `role_permission_info`
+2023-01-14 23:47:05.721 [DEBU] {20cea6f97d373a176a6eb53fb8b75877} [  1 ms] [default] [shop] [rows:0  ] SELECT `id`,`role_id`,`permission_id`,`created_at`,`updated_at` FROM `role_permission_info` WHERE `role_id` IN ('2')
+2023-01-14 23:47:05.724 [DEBU] {700dbbf97d373a176b6eb53fb91f3acf} [  3 ms] [default] [shop] [rows:6  ] SHOW FULL COLUMNS FROM `permission_info`
+2023-01-14 23:47:05.725 [DEBU] {9661eef97d373a176c6eb53f98608704} [  0 ms] [default] [shop] [rows:0  ] SELECT `id`,`name`,`path`,`created_at`,`updated_at`,`deleted_at` FROM `permission_info` WHERE (0=1) AND `deleted_at` IS NULL
+2023-01-14 23:50:00.084 [DEBU] {087d3b92a6373a1719998260ddca2b7b} [  5 ms] [default] [shop] [rows:9  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-01-14 23:50:00.085 [DEBU] {abd39292a6373a171a9982607877800b} [  1 ms] [default] [shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`deleted_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE (`name`='song') AND `deleted_at` IS NULL LIMIT 1
+2023-01-14 23:50:00.088 [DEBU] {7d5eb992a6373a171b9982605e9c51de} [  1 ms] [default] [shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`deleted_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE (`id`='3') AND `deleted_at` IS NULL LIMIT 1
+2023-01-14 23:50:00.092 [DEBU] {5d86db92a6373a171c998260b2c5d803} [  3 ms] [default] [shop] [rows:5  ] SHOW FULL COLUMNS FROM `role_permission_info`
+2023-01-14 23:50:00.094 [DEBU] {43731793a6373a171d998260e35c27d0} [  1 ms] [default] [shop] [rows:0  ] SELECT `id`,`role_id`,`permission_id`,`created_at`,`updated_at` FROM `role_permission_info` WHERE `role_id` IN ('2')
+2023-01-14 23:50:00.097 [DEBU] {10e02c93a6373a171e998260aa413dd3} [  3 ms] [default] [shop] [rows:6  ] SHOW FULL COLUMNS FROM `permission_info`
+2023-01-14 23:50:00.098 [DEBU] {a5e05c93a6373a171f9982607a26fa6c} [  1 ms] [default] [shop] [rows:0  ] SELECT `id`,`name`,`path`,`created_at`,`updated_at`,`deleted_at` FROM `permission_info` WHERE (0=1) AND `deleted_at` IS NULL
+2023-01-14 23:51:05.587 [DEBU] {c5357fd2b5373a1795f6ee3f10299290} [  6 ms] [default] [shop] [rows:9  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-01-14 23:51:05.589 [DEBU] {b73eddd2b5373a1796f6ee3ff351e9e6} [  2 ms] [default] [shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`deleted_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE (`name`='song') AND `deleted_at` IS NULL LIMIT 1
+2023-01-14 23:51:05.591 [DEBU] {6e3406d3b5373a1797f6ee3f0b48e03f} [  1 ms] [default] [shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`deleted_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE (`id`='3') AND `deleted_at` IS NULL LIMIT 1
+2023-01-14 23:51:05.594 [DEBU] {d8aa18d3b5373a1798f6ee3ffd171b1b} [  3 ms] [default] [shop] [rows:5  ] SHOW FULL COLUMNS FROM `role_permission_info`
+2023-01-14 23:51:05.595 [DEBU] {3f284ad3b5373a1799f6ee3fde2adfde} [  0 ms] [default] [shop] [rows:0  ] SELECT `id`,`role_id`,`permission_id`,`created_at`,`updated_at` FROM `role_permission_info` WHERE `role_id` IN ('2')
+2023-01-14 23:51:05.599 [DEBU] {7ee45dd3b5373a179af6ee3fd12bd976} [  3 ms] [default] [shop] [rows:6  ] SHOW FULL COLUMNS FROM `permission_info`
+2023-01-14 23:51:05.600 [DEBU] {6b9d8ed3b5373a179bf6ee3f09cc1d8e} [  1 ms] [default] [shop] [rows:0  ] SELECT `id`,`name`,`path`,`created_at`,`updated_at`,`deleted_at` FROM `permission_info` WHERE (0=1) AND `deleted_at` IS NULL

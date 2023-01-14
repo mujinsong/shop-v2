@@ -8,6 +8,7 @@ import (
 	_ "shop-v2/internal/logic/admin"
 	_ "shop-v2/internal/logic/bizctx"
 	_ "shop-v2/internal/logic/data"
+	_ "shop-v2/internal/logic/file"
 	_ "shop-v2/internal/logic/login"
 	_ "shop-v2/internal/logic/middleware"
 	_ "shop-v2/internal/logic/permission"

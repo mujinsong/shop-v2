@@ -10,15 +10,13 @@ import (
 	"github.com/gogf/gf/v2/util/gconv"
 	"shop-v2/api/backend"
 	"shop-v2/internal/consts"
+	"shop-v2/internal/controller"
 	"shop-v2/internal/dao"
 	"shop-v2/internal/model/entity"
 	"shop-v2/internal/service"
 	"shop-v2/utility"
 	"shop-v2/utility/response"
 	"strconv"
-	"time"
-
-	"shop-v2/internal/controller"
 )
 
 var (
@@ -33,7 +31,6 @@ var (
 			// 启动gtoken
 			gfAdminToken := &gtoken.GfToken{
 				ServerName:       "shop_v2",
-				Timeout:          int(time.Minute.Milliseconds()),
 				CacheMode:        2, //gredis
 				LoginPath:        "/backend/login",
 				LoginBeforeFunc:  loginFunc,
@@ -86,6 +83,9 @@ var (
 					group.ALLMap(g.Map{
 						"/backend/admin/info": controller.Admin.Info,
 					})
+					group.Bind(
+						controller.File,
+					)
 				})
 			})
 			s.Run()
@@ -116,14 +116,14 @@ func loginFunc(r *ghttp.Request) (string, interface{}) {
 	}
 
 	// 唯一标识，扩展参数user data
-	g.Dump("admininfo", adminInfo)
+	//g.Dump("admininfo", adminInfo)
 	return consts.GtokenAdminPrefix + strconv.Itoa(adminInfo.Id), adminInfo
 }
 
 //todo 迁移合适位置
 //自定义登陆之后的函数
 func loginAfterFunc(r *ghttp.Request, respData gtoken.Resp) {
-	g.Dump("respData:", respData)
+	//g.Dump("respData:", respData)
 	g.Dump("在这了")
 	if !respData.Success() {
 		//g.Dump("在这了")
@@ -136,11 +136,11 @@ func loginAfterFunc(r *ghttp.Request, respData gtoken.Resp) {
 		//adminId := respData.GetString("userKey")
 		userKey := respData.GetString("userKey")
 		adminId := gstr.StrEx(userKey, consts.GtokenAdminPrefix)
-		g.Dump("ID:", adminId)
+		//g.Dump("ID:", adminId)
 		//根据id获得登录用户其他信息
 		adminInfo := entity.AdminInfo{}
 		err := dao.AdminInfo.Ctx(context.TODO()).WherePri(adminId).Scan(&adminInfo)
-		g.Dump(adminInfo)
+		//g.Dump(adminInfo)
 		if err != nil {
 			return
 		}
@@ -169,14 +169,14 @@ func loginAfterFunc(r *ghttp.Request, respData gtoken.Resp) {
 			RoleIds:     adminInfo.RoleIds,
 			Permissions: permissions,
 		}
-		g.Dump("data:", data)
+		//g.Dump("data:", data)
 		response.JsonExit(r, 0, "", data)
 	}
 	return
 }
 func authAfterFunc(r *ghttp.Request, respData gtoken.Resp) {
 	var adminInfo entity.AdminInfo
-	g.Dump("res:", respData)
+	//g.Dump("res:", respData)
 	err := gconv.Struct(respData.GetString("data"), &adminInfo)
 	if err != nil {
 		g.Dump("验证出问题了", err)
