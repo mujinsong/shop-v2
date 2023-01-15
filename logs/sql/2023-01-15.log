@@ -121,3 +121,11 @@ Stack:
 
 2023-01-15 00:22:23.904 [DEBU] {6f1b50266b393a17cb9879331e2624d3} [  3 ms] [default] [shop] [rows:1  ] SELECT COUNT(1) FROM `file_info` WHERE (`user_id`=3) AND (`created_at` >= '2023-01-15 00:21:23')
 2023-01-15 00:22:23.909 [DEBU] {6f1b50266b393a17cb9879331e2624d3} [  3 ms] [default] [shop] [rows:1  ] INSERT INTO `file_info`(`updated_at`,`user_id`,`name`,`src`,`url`,`created_at`) VALUES('2023-01-15 00:22:23',3,'cps1v3huphaapgwz54.jpg','upload/20230115/cps1v3huphaapgwz54.jpg','/upload/20230115/cps1v3huphaapgwz54.jpg','2023-01-15 00:22:23') 
+2023-01-15 15:31:20.359 [DEBU] {913c80e8046b3a172d4ec55b69d4dcc6} [ 13 ms] [default] [shop] [rows:9  ] SHOW FULL COLUMNS FROM `admin_info`
+2023-01-15 15:31:20.375 [DEBU] {cd5354e9046b3a172e4ec55be89169cf} [ 15 ms] [default] [shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`deleted_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE (`name`='song') AND `deleted_at` IS NULL LIMIT 1
+2023-01-15 15:32:13.936 [DEBU] {e7e79962116b3a17304ec55bc7a193c0} [  2 ms] [default] [shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`deleted_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE (`name`='song') AND `deleted_at` IS NULL LIMIT 1
+2023-01-15 15:32:13.939 [DEBU] {04d9d862116b3a17314ec55b893c264a} [  1 ms] [default] [shop] [rows:1  ] SELECT `id`,`name`,`password`,`role_ids`,`created_at`,`updated_at`,`deleted_at`,`user_salt`,`is_admin` FROM `admin_info` WHERE (`id`='3') AND `deleted_at` IS NULL LIMIT 1
+2023-01-15 15:32:13.946 [DEBU] {c3c5ef62116b3a17324ec55b8e791273} [  6 ms] [default] [shop] [rows:5  ] SHOW FULL COLUMNS FROM `role_permission_info`
+2023-01-15 15:32:13.950 [DEBU] {5d1e5563116b3a17334ec55b655f57a3} [  4 ms] [default] [shop] [rows:0  ] SELECT `id`,`role_id`,`permission_id`,`created_at`,`updated_at` FROM `role_permission_info` WHERE `role_id` IN ('2')
+2023-01-15 15:32:13.954 [DEBU] {3c368f63116b3a17344ec55b29a988f7} [  4 ms] [default] [shop] [rows:6  ] SHOW FULL COLUMNS FROM `permission_info`
+2023-01-15 15:32:13.957 [DEBU] {0fa8d963116b3a17354ec55b31332972} [  2 ms] [default] [shop] [rows:0  ] SELECT `id`,`name`,`path`,`created_at`,`updated_at`,`deleted_at` FROM `permission_info` WHERE (0=1) AND `deleted_at` IS NULL

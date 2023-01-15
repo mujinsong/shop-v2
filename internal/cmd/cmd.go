@@ -85,6 +85,7 @@ var (
 					})
 					group.Bind(
 						controller.File,
+						controller.Upload,
 					)
 				})
 			})
