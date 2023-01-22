@@ -27,7 +27,6 @@ var (
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
 			s := g.Server()
 
-			//loginFunc := Login
 			// 启动gtoken
 			gfAdminToken := &gtoken.GfToken{
 				ServerName:       "shop_v2",
