@@ -103,7 +103,7 @@ func loginFunc(r *ghttp.Request) (string, interface{}) {
 		r.Response.WriteJson(gtoken.Fail("账号或密码错误."))
 		r.ExitAll()
 	}
-	//验证帐号密码是否正确
+	//验证账号密码是否正确
 	adminInfo := entity.AdminInfo{}
 	err := dao.AdminInfo.Ctx(ctx).Where("name", name).Scan(&adminInfo)
 	if err != nil {

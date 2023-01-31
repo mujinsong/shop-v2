@@ -22,7 +22,7 @@ func New() *sLogin {
 
 // Login 执行登录
 func (s *sLogin) Login(ctx context.Context, in model.UserLoginInput) error {
-	//验证帐号密码是否正确
+	//验证账号密码是否正确
 	adminInfo := entity.AdminInfo{}
 	err := dao.AdminInfo.Ctx(ctx).Where("name", in.Name).Scan(&adminInfo)
 	if err != nil {
