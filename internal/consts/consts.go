@@ -11,4 +11,9 @@ const (
 	CtxAdminIsAdmin          = "CtxAdminIsAdmin"
 	CtxAdminRoleIds          = "CtxAdminRoleIds"
 	CodeMissingParameterMsg  = "缺少参数"
+	CacheModeRedis           = 2
+	BackendServerName        = "shop_v2"
+	MultiLogin               = true
+	ErrLoginFaulMsg          = "登录失败，帐号或密码错误"
+	GTokenExpireIn           = 10 * 24 * 60 * 60
 )
