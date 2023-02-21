@@ -25,7 +25,7 @@ type CategoryDeleteReq struct {
 type CategoryDeleteRes struct{}
 
 type CategoryUpdateReq struct {
-	g.Meta `path:"/category/update/{Id}" method:"post" tags:"商品分类" summary:"修改商品分类接口"`
+	g.Meta `path:"/category/update/{Id}" method:"post" tags:"商品分类" summary:"商品分类接口"`
 	Id     uint `json:"id"      v:"min:1#请选择需要修改的商品分类" dc:"商品分类Id"`
 	CommonAddUpdate
 }
@@ -34,7 +34,7 @@ type CategoryUpdateRes struct {
 }
 
 type CategoryGetListCommonReq struct {
-	g.Meta `path:"/category/list" method:"get" tags:"商品分类" summary:"修改商品分类列表"`
+	g.Meta `path:"/category/list" method:"get" tags:"商品分类" summary:"商品分类列表"`
 	Sort   int `json:"sort"   in:"query" dc:"排序类型"`
 	CommonPaginationReq
 }
@@ -42,5 +42,13 @@ type CategoryGetListCommonRes struct {
 	List  interface{} `json:"list" description:"列表"`
 	Page  int         `json:"page" description:"分页码"`
 	Size  int         `json:"size" description:"分页数量"`
+	Total int64       `json:"total" description:"数据总数"`
+}
+type CategoryGetListAllCommonReq struct {
+	g.Meta `path:"/category/list/all" method:"get" tags:"商品分类" summary:"商品分类全部列表"`
+	Sort   int `json:"sort"   in:"query" dc:"排序类型"`
+}
+type CategoryGetListAllCommonRes struct {
+	List  interface{} `json:"list" description:"列表"`
 	Total int64       `json:"total" description:"数据总数"`
 }

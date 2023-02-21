@@ -46,7 +46,15 @@ func (a *cCategory) Update(ctx context.Context, req *backend.CategoryUpdateReq) 
 	})
 	return &backend.CategoryUpdateRes{Id: req.Id}, nil
 }
-
+func (a *cCategory) ListAll(ctx context.Context, req *backend.CategoryGetListAllCommonReq) (res *backend.CategoryGetListAllCommonRes, err error) {
+	getListRes, err := service.Category().GetListAll(ctx, model.CategoryGetListInput{})
+	if err != nil {
+		return nil, err
+	}
+	return &backend.CategoryGetListAllCommonRes{List: getListRes.List,
+		Total: getListRes.Total,
+	}, nil
+}
 func (a *cCategory) List(ctx context.Context, req *backend.CategoryGetListCommonReq) (res *backend.CategoryGetListCommonRes, err error) {
 	getListRes, err := service.Category().GetList(ctx, model.CategoryGetListInput{
 		Page: req.Page,
