@@ -56,6 +56,7 @@ var (
 						controller.File,
 						controller.Upload,
 						controller.Category, //商品分类
+						controller.Coupon,   //商品优惠券
 					)
 				})
 			})

@@ -8,6 +8,7 @@ import (
 	_ "shop-v2/internal/logic/admin"
 	_ "shop-v2/internal/logic/bizctx"
 	_ "shop-v2/internal/logic/category"
+	_ "shop-v2/internal/logic/coupon"
 	_ "shop-v2/internal/logic/data"
 	_ "shop-v2/internal/logic/file"
 	_ "shop-v2/internal/logic/login"
