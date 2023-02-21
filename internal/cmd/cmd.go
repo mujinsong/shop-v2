@@ -55,6 +55,7 @@ var (
 					group.Bind(
 						controller.File,
 						controller.Upload,
+						controller.Category, //商品分类
 					)
 				})
 			})
