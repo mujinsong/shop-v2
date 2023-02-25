@@ -12,6 +12,7 @@ import (
 	_ "shop-v2/internal/logic/data"
 	_ "shop-v2/internal/logic/file"
 	_ "shop-v2/internal/logic/goods"
+	_ "shop-v2/internal/logic/goods_options"
 	_ "shop-v2/internal/logic/login"
 	_ "shop-v2/internal/logic/middleware"
 	_ "shop-v2/internal/logic/permission"

@@ -59,6 +59,7 @@ var (
 						controller.Coupon,     //商品优惠券
 						controller.UserCoupon, //用户优惠券
 						controller.Goods,      //商品
+						controller.GoodsOptions,
 					)
 				})
 			})
