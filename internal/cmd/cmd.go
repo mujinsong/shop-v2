@@ -55,8 +55,9 @@ var (
 					group.Bind(
 						controller.File,
 						controller.Upload,
-						controller.Category, //商品分类
-						controller.Coupon,   //商品优惠券
+						controller.Category,   //商品分类
+						controller.Coupon,     //商品优惠券
+						controller.UserCoupon, //用户优惠券
 					)
 				})
 			})

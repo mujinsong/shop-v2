@@ -8,61 +8,50 @@ import (
 	"shop-v2/internal/service"
 )
 
-// Coupon 分类管理
-var Coupon = cCoupon{}
+// UserCoupon 分类管理
+var UserCoupon = cUserCoupon{}
 
-type cCoupon struct{}
+type cUserCoupon struct{}
 
-func (a *cCoupon) Create(ctx context.Context, req *backend.CouponReq) (res *backend.CouponRes, err error) {
-	out, err := service.Coupon().Create(ctx, model.CouponCreateInput{
-		CouponCreateUpdateBase: model.CouponCreateUpdateBase{
-			Name:       req.Name,
-			Price:      req.Price,
-			GoodsIds:   req.GoodsIds,
-			CategoryId: req.CategoryId,
+func (a *cUserCoupon) Create(ctx context.Context, req *backend.UserCouponReq) (res *backend.UserCouponRes, err error) {
+	out, err := service.UserCoupon().Create(ctx, model.UserCouponCreateInput{
+		UserCouponCreateUpdateBase: model.UserCouponCreateUpdateBase{
+			UserId:   req.UserId,
+			CouponId: req.CouponId,
+			Status:   req.Status,
 		},
 	})
 	if err != nil {
 		return nil, err
 	}
-	return &backend.CouponRes{CouponId: out.CouponId}, nil
+	return &backend.UserCouponRes{Id: out.Id}, nil
 }
-func (a *cCoupon) Delete(ctx context.Context, req *backend.CouponDeleteReq) (res *backend.CouponDeleteRes, err error) {
-	err = service.Coupon().Delete(ctx, req.Id)
+func (a *cUserCoupon) Delete(ctx context.Context, req *backend.UserCouponDeleteReq) (res *backend.UserCouponDeleteRes, err error) {
+	err = service.UserCoupon().Delete(ctx, req.Id)
 	return
 }
 
-func (a *cCoupon) Update(ctx context.Context, req *backend.CouponUpdateReq) (res *backend.CouponUpdateRes, err error) {
-	err = service.Coupon().Update(ctx, model.CouponUpdateInput{
+func (a *cUserCoupon) Update(ctx context.Context, req *backend.UserCouponUpdateReq) (res *backend.UserCouponUpdateRes, err error) {
+	err = service.UserCoupon().Update(ctx, model.UserCouponUpdateInput{
 		Id: req.Id,
-		CouponCreateUpdateBase: model.CouponCreateUpdateBase{
-			Name:       req.Name,
-			Price:      req.Price,
-			GoodsIds:   req.GoodsIds,
-			CategoryId: req.CategoryId,
+		UserCouponCreateUpdateBase: model.UserCouponCreateUpdateBase{
+			UserId:   req.UserId,
+			CouponId: req.CouponId,
+			Status:   req.Status,
 		},
 	})
-	return &backend.CouponUpdateRes{Id: req.Id}, nil
+	return &backend.UserCouponUpdateRes{Id: req.Id}, nil
 }
-func (a *cCoupon) ListAll(ctx context.Context, req *backend.CouponGetListAllCommonReq) (res *backend.CouponGetListAllCommonRes, err error) {
-	getListRes, err := service.Coupon().GetListAll(ctx, model.CouponGetListInput{})
-	if err != nil {
-		return nil, err
-	}
-	return &backend.CouponGetListAllCommonRes{List: getListRes.List,
-		Total: getListRes.Total,
-	}, nil
-}
-func (a *cCoupon) List(ctx context.Context, req *backend.CouponGetListCommonReq) (res *backend.CouponGetListCommonRes, err error) {
-	getListRes, err := service.Coupon().GetList(ctx, model.CouponGetListInput{
+
+func (a *cUserCoupon) List(ctx context.Context, req *backend.UserCouponGetListCommonReq) (res *backend.UserCouponGetListCommonRes, err error) {
+	getListRes, err := service.UserCoupon().GetList(ctx, model.UserCouponGetListInput{
 		Page: req.Page,
 		Size: req.Size,
-		Sort: req.Sort,
 	})
 	if err != nil {
 		return nil, err
 	}
-	return &backend.CouponGetListCommonRes{List: getListRes.List,
+	return &backend.UserCouponGetListCommonRes{List: getListRes.List,
 		Page:  getListRes.Page,
 		Size:  getListRes.Size,
 		Total: getListRes.Total,

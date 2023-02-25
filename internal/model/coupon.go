@@ -1,7 +1,6 @@
 package model
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/os/gtime"
 )
 
@@ -22,10 +21,7 @@ type CouponCreateInput struct {
 type CouponCreateOutput struct {
 	CouponId int `json:"coupon_id"`
 }
-type CouponDeleteReq struct {
-	g.Meta `path:"/coupon/delete" method:"delete" tags:"优惠券" summary:"删除优惠券接口"`
-	Id     uint `v:"min:1#请选择需要删除的优惠券" dc:"优惠券id"`
-}
+
 type CouponDeleteRes struct{}
 
 // CouponUpdateInput 修改优惠券
