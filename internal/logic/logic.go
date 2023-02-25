@@ -5,10 +5,14 @@
 package logic
 
 import (
+	_ "shop-v2/internal/logic/address"
 	_ "shop-v2/internal/logic/admin"
 	_ "shop-v2/internal/logic/article"
 	_ "shop-v2/internal/logic/bizctx"
+	_ "shop-v2/internal/logic/cart"
 	_ "shop-v2/internal/logic/category"
+	_ "shop-v2/internal/logic/collection"
+	_ "shop-v2/internal/logic/comment"
 	_ "shop-v2/internal/logic/coupon"
 	_ "shop-v2/internal/logic/data"
 	_ "shop-v2/internal/logic/file"
@@ -16,8 +20,11 @@ import (
 	_ "shop-v2/internal/logic/goods_options"
 	_ "shop-v2/internal/logic/login"
 	_ "shop-v2/internal/logic/middleware"
+	_ "shop-v2/internal/logic/order"
+	_ "shop-v2/internal/logic/order_goods_comments"
 	_ "shop-v2/internal/logic/permission"
 	_ "shop-v2/internal/logic/position"
+	_ "shop-v2/internal/logic/praise"
 	_ "shop-v2/internal/logic/role"
 	_ "shop-v2/internal/logic/rotation"
 	_ "shop-v2/internal/logic/session"

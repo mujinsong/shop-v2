@@ -52,7 +52,7 @@ func (a *cCategory) ListAll(ctx context.Context, req *backend.CategoryGetListAll
 		return nil, err
 	}
 	return &backend.CategoryGetListAllCommonRes{List: getListRes.List,
-		Total: getListRes.Total,
+		Total: int64(getListRes.Total),
 	}, nil
 }
 func (a *cCategory) List(ctx context.Context, req *backend.CategoryGetListCommonReq) (res *backend.CategoryGetListCommonRes, err error) {
@@ -67,6 +67,6 @@ func (a *cCategory) List(ctx context.Context, req *backend.CategoryGetListCommon
 	return &backend.CategoryGetListCommonRes{List: getListRes.List,
 		Page:  getListRes.Page,
 		Size:  getListRes.Size,
-		Total: getListRes.Total,
+		Total: int64(getListRes.Total),
 	}, nil
 }

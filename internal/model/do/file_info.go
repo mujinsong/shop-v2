@@ -16,7 +16,7 @@ type FileInfo struct {
 	Name      interface{} // 图片名称
 	Src       interface{} // 本地文件存储路径
 	Url       interface{} // URL地址
-	UserId    interface{} // 用户ID
+	UserId    interface{} // 用户id
 	CreatedAt *gtime.Time //
 	UpdatedAt *gtime.Time //
 }

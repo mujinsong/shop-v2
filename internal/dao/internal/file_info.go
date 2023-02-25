@@ -24,7 +24,7 @@ type FileInfoColumns struct {
 	Name      string // 图片名称
 	Src       string // 本地文件存储路径
 	Url       string // URL地址
-	UserId    string // 用户ID
+	UserId    string // 用户id
 	CreatedAt string //
 	UpdatedAt string //
 }

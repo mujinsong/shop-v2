@@ -24,17 +24,17 @@ type OrderInfoColumns struct {
 	Number           string // 订单编号
 	UserId           string // 用户id
 	PayType          string // 支付方式 1微信 2支付宝 3云闪付
-	CreatedAt        string //
-	UpdatedAt        string //
 	Remark           string // 备注
 	PayAt            string // 支付时间
-	Status           string // 订单状态： 1待支付 2已支付待发货 3已发货 4已收货待评价
+	Status           string // 订单状态： 1待支付 2已支付待发货 3已发货 4已收货待评价 5已评价
 	ConsigneeName    string // 收货人姓名
 	ConsigneePhone   string // 收货人手机号
 	ConsigneeAddress string // 收货人详细地址
 	Price            string // 订单金额 单位分
 	CouponPrice      string // 优惠券金额 单位分
 	ActualPrice      string // 实际支付金额 单位分
+	CreatedAt        string //
+	UpdatedAt        string //
 }
 
 // orderInfoColumns holds the columns for table order_info.
@@ -43,8 +43,6 @@ var orderInfoColumns = OrderInfoColumns{
 	Number:           "number",
 	UserId:           "user_id",
 	PayType:          "pay_type",
-	CreatedAt:        "created_at",
-	UpdatedAt:        "updated_at",
 	Remark:           "remark",
 	PayAt:            "pay_at",
 	Status:           "status",
@@ -54,6 +52,8 @@ var orderInfoColumns = OrderInfoColumns{
 	Price:            "price",
 	CouponPrice:      "coupon_price",
 	ActualPrice:      "actual_price",
+	CreatedAt:        "created_at",
+	UpdatedAt:        "updated_at",
 }
 
 // NewOrderInfoDao creates and returns a new DAO object for table data access.

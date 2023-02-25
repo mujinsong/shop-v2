@@ -73,6 +73,6 @@ func (a *cRotation) ListFrontend(ctx context.Context, req *frontend.RotationGetL
 	return &frontend.RotationGetListCommonRes{List: getListRes.List,
 		Page:  getListRes.Page,
 		Size:  getListRes.Size,
-		Total: getListRes.Total,
+		Total: int(getListRes.Total),
 	}, nil
 }

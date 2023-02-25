@@ -72,10 +72,11 @@ func (s *sCategory) GetList(ctx context.Context, in model.CategoryGetListInput) 
 	if len(list) == 0 {
 		return out, nil
 	}
-	out.Total, err = m.Count()
+	temp, err := m.Count()
 	if err != nil {
 		return out, err
 	}
+	out.Total = int(temp)
 	if err := listModel.Scan(&out.List); err != nil {
 		return out, err
 	}
@@ -100,10 +101,11 @@ func (s *sCategory) GetListAll(ctx context.Context, in model.CategoryGetListInpu
 	if len(list) == 0 {
 		return out, nil
 	}
-	out.Total, err = m.Count()
+	temp, err := m.Count()
 	if err != nil {
 		return out, err
 	}
+	out.Total = int(temp)
 	if err := listModel.Scan(&out.List); err != nil {
 		return out, err
 	}
