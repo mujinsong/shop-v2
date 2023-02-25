@@ -6,6 +6,7 @@ package logic
 
 import (
 	_ "shop-v2/internal/logic/admin"
+	_ "shop-v2/internal/logic/article"
 	_ "shop-v2/internal/logic/bizctx"
 	_ "shop-v2/internal/logic/category"
 	_ "shop-v2/internal/logic/coupon"

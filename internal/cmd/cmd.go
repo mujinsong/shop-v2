@@ -60,6 +60,7 @@ var (
 						controller.UserCoupon, //用户优惠券
 						controller.Goods,      //商品
 						controller.GoodsOptions,
+						controller.Article, //文章管理
 					)
 				})
 			})
